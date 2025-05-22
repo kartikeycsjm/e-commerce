@@ -17,7 +17,8 @@ export default function FavoritesPage() {
 
   return (
     <div className="p-6 max-w-5xl mx-auto min-h-screen">
-      <h1 className="text-3xl font-bold mb-6">Your Favorites</h1>
+      <h1 className="text-3xl text-white text-center
+      font-bold mt-16 my-6">Your Favorites</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {favorites.map(({ id, name, image, price, discount, discountedPrice }) => (
           <div

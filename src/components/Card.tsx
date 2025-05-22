@@ -58,7 +58,7 @@ const Card = ({ id, name, image, price, discount, discountedPrice }
                 </button>
 
             </div>
-            <div className='w-full flex justify-between'>
+            <div className='w-full flex justify-around'>
                 {isInCart(id) ? (
                     <div className="flex items-center gap-2 mt-4">
                         <button
