@@ -25,7 +25,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <h2 className="font-semibold mb-2">Contact</h2>
-                    <p className="text-gray-400">Email: <a href="mailto:contact@techshop.com" className="hover:underline">contact@example.com</a></p>
+                    <p className="text-gray-400">Email: <a href="mailto:contact@techshop.com" className="hover:underline">contact@techshop.com</a></p>
                     <p className="text-gray-400">Location: India</p>
                 </div>
             </div>
