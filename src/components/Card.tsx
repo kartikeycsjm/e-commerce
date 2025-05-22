@@ -58,23 +58,24 @@ const Card = ({ id, name, image, price, discount, discountedPrice }
                 </button>
 
             </div>
-            <div className='w-full flex justify-around'>
+            <div className='w-full flex justify-around
+            '>
                 {isInCart(id) ? (
-                    <div className="flex items-center gap-2 mt-4">
+                    <div className="rounded-lg bg-pink-800 flex items-center gap-3 mt-4">
                         <button
                             onClick={() => removeFromCart(id)}
-                            className="bg-red-600 text-white px-3 py-2 rounded hover:bg-red-700 transition"
+                            className="text-white px-3 py-2 rounded transition"
                         >
-                            -1
+                            -
                         </button>
 
-                        <span className="font-medium">Qty: {currentItem?.quantity}</span>
+                        <span className="font-bold">{currentItem?.quantity}</span>
 
                         <button
                             onClick={() => addToCart({ id, name, image, price, discount, discountedPrice })}
-                            className="bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 transition"
+                            className="text-white px-3 py-2 rounded transition"
                         >
-                            +1
+                            +
                         </button>
                     </div>
                 ) : (

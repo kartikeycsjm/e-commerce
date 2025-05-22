@@ -41,23 +41,23 @@ export default function CartPage() {
               <p className="text-gray-500 line-through">&#8377;{price.toFixed(2)}</p>
               <p className="text-green-600 font-bold">&#8377;{discountedPrice.toFixed(2)}</p>
             </div>
-            <div className="flex items-center gap-1 mt-4">
+            <div className="bg-pink-700 rounded-lg flex items-center gap-1 mt-4">
               <button
                 onClick={() => removeFromCart(id)}
-                className="bg-red-600 text-white px-2 py-1 rounded hover:bg-red-700 transition"
+                className=" text-white px-2 py-1 rounded"
               >
-                -1
+                -
               </button>
 
-              <span className="font-sm text-sm text-white">Qty: {quantity}</span>
+              <span className="font-sm text-sm text-white">{quantity}</span>
 
               <button
                 onClick={() =>
                   addToCart({ id, name, image, price, discount, discountedPrice })
                 }
-                className="bg-green-600 text-white px-2 py-1 rounded hover:bg-green-700 transition"
+                className="text-white px-2 py-1 rounded"
               >
-                +1
+                +
               </button>
             </div>
           </div>
