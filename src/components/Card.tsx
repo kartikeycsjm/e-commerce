@@ -19,10 +19,10 @@ const Card = ({ id, name, image, price, discount, discountedPrice }
     const currentItem = cart.find(p => p.id === id)
     return (
         <div className='w-full shadow-md border border-gray-800
-        h-[480px] rounded-xl my-5 
+        h-[380px] md:h-[400px] rounded-xl my-5 
         overflow-hidden transition-transform hover:scale-105 duration-300'>
             <div
-                className="relative w-full h-[300px] rounded-xl"
+                className="relative w-full h-[220px] rounded-xl"
             >
                 <Image
                     src={image}
@@ -32,9 +32,10 @@ const Card = ({ id, name, image, price, discount, discountedPrice }
                     priority
                 />
             </div>
-            <div className="px-4 pt-4 flex justify-between">
+            <div className="px-4 pt-2 flex justify-between">
                 <div>
-                    <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-1">{name}</h3>
+                    <h3 className="text-md font-semibold 
+                  text-white mb-1">{name}</h3>
                     <div className="flex items-center gap-2 mb-1">
                         <span className="text-xl font-bold text-green-600">&#8377;{discountedPrice.toFixed(2)}</span>
                         {discount !== '0%' && (
@@ -58,8 +59,6 @@ const Card = ({ id, name, image, price, discount, discountedPrice }
 
             </div>
             <div className='w-full flex justify-between'>
-
-
                 {isInCart(id) ? (
                     <div className="flex items-center gap-2 mt-4">
                         <button

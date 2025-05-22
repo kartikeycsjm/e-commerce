@@ -96,9 +96,10 @@ const page = () => {
       md:text-5xl'>
         Products
       </h1>
-      <section className='mx-10 grid grid-cols-1
-      sm:grid-cols-2 gap-5 sm:gap-10 md:gap-15
-      md:grid-cols-3 mb-10'>
+      <section className='mx-14 grid grid-cols-1
+      sm:grid-cols-2 
+      md:grid-cols-3 gap-5 sm:gap-10 md:gap-5
+      mb-10'>
         {cartItems.map((item, index) => (
           <Card
             id={item.id}
