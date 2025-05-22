@@ -17,7 +17,7 @@ const Nav = () => {
     return (
         <nav className="w-full flex fixed top-0 
         bg-gray-800 md:h-20 h-18
-        justify-between items-center px-4 z-40">
+        justify-between z-50 items-center px-4">
             <h1 className="text-2xl text-white font-bold">
                 Tech Shop
             </h1>

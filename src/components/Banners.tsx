@@ -43,7 +43,7 @@ const Banners = () => {
             </div>
             <div className='w-[70%] md:w-[50%] absolute 
              bottom-15 h-[20vh] flex items-center 
-            justify-between z-50'>
+            justify-between z-40'>
                 <button onClick={moveForward}
                     className='w-[80px] h-[80px] 
                     flex items-center justify-center font-extralight
