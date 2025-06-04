@@ -1,7 +1,20 @@
-import React from 'react'
-import Banners from '@/components/Banners'
-import Card from '@/components/Card'
-const cartItems = [
+'use client'
+import React, { useRef } from 'react';
+import Banners from '@/components/Banners';
+import Card from '@/components/Card';
+
+
+type CartItem = {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  discount: string;
+  discountedPrice: number;
+};
+
+
+const cartItems: CartItem[] = [
   {
     id: 1,
     name: "Wireless Headphones",
@@ -86,17 +99,94 @@ const cartItems = [
 
 
 
+const Page = () => {
+  const scrollwalaR = useRef<HTMLDivElement | null>(null);
 
-const page = () => {
+  const l = () => {
+    scrollwalaR.current?.scrollBy({ left: -400, behavior: 'smooth' });
+  };
+
+  const r = () => {
+
+    scrollwalaR.current?.scrollBy({ left: 400 });
+  };
+
+
   return (
     <div className='w-full min-h-screen text-white mt-14'>
       <Banners />
-      <h1 className='mx-10 my-5 font-bold text-center
-      text-2xl
-      md:text-5xl'>
+      <h1 className='mx-10 my-5 font-bold text-center text-2xl md:text-5xl'>
         Products
       </h1>
-      <section className='mx-8 grid grid-cols-1
+      <div className="relative">
+        <section
+          id='cartsection'
+          ref={scrollwalaR}
+          className="w-full flex gap-4 overflow-x-auto px-4 py-2 scrollbar-hide scroll-smooth"
+        >
+          {cartItems.map((item) => (
+            <div key={item.id} className="flex-shrink-0">
+              <Card
+                id={item.id}
+                name={item.name}
+                image={item.image}
+                price={item.price}
+                discount={item.discount}
+                discountedPrice={item.discountedPrice}
+              />
+            </div>
+          ))}
+        </section>
+        <button
+          onClick={l}
+          className='
+          absolute left-10 top-1/2 transform -translate-y-1/2 
+          w-[50px] h-[50px] 
+          flex items-center justify-center 
+          text-2xl bg-[#000000a3] rounded-full z-10'
+        >
+          &lt;
+        </button>
+        <button
+
+          onClick={r}
+          className='absolute right-10 top-1/2 
+          transform 
+          -translate-y-1/2 
+          w-[50px] h-[50px] flex items-center 
+          justify-center text-2xl bg-[#000000a3] 
+          rounded-full z-10'
+        >
+          &gt;
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Page;
+
+
+
+
+
+{/* <section id='cartsection' className="w-full flex gap-4 overflow-x-auto px-4 py-2 scrollbar-hide">
+        {cartItems.map((item) => (
+          <div key={item.id} className="flex-shrink-0">
+            <Card
+              id={item.id}
+              name={item.name}
+              image={item.image}
+              price={item.price}
+              discount={item.discount}
+              discountedPrice={item.discountedPrice}
+            />
+          </div>
+        ))}
+      </section> */}
+
+{/* not in use now */ }
+{/* <section className='mx-8 grid grid-cols-1
       sm:grid-cols-2 
       md:grid-cols-3 gap-5 sm:gap-10 md:gap-5
       mb-10'>
@@ -110,9 +200,4 @@ const page = () => {
             discountedPrice={item.discountedPrice}
             key={item.id} />
         ))}
-      </section>
-    </div>
-  )
-}
-
-export default page
+      </section> */}

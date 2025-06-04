@@ -18,7 +18,7 @@ const Card = ({ id, name, image, price, discount, discountedPrice }
     const { addToCart, removeFromCart, addToFavorites, isFavorite, isInCart, removeFromFavorites, cart } = useShop()
     const currentItem = cart.find(p => p.id === id)
     return (
-        <div className='w-full shadow-md border border-gray-800
+        <div className='w-[300px] shadow-md border border-gray-800
         h-[380px] md:h-[400px] rounded-xl my-5 
         overflow-hidden transition-transform hover:scale-105 duration-300'>
             <div

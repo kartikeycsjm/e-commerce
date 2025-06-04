@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+#cartsection {
+    scrollbar-width: none; 
+}
+
